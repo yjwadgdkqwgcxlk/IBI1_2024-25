@@ -18,7 +18,7 @@ S_array = [S]
 I_array = [I]   
 R_array = [R]
 
-# stimulate 1000 time points
+# stimulate 1000 time points,create for-loop to iterate 1000 times
 for t in range(1000):
     # calculate number of infected individuals
     I = I + beta * S * I / N
