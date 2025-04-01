@@ -1,3 +1,6 @@
+#import needed library
+import re
+
 #set the sequence
 seq = 'ATGCAAGTGGTGTGTCTGTTCTGAGAGGGCCTAA'
 
@@ -7,11 +10,11 @@ start_index = 0 #the starting index of the intron
 
 #look for "GT" and "AG"
 while True:
-    gt_index = seq.find('GT', start_index)  # localise GT
+    gt_index = seq.find("GT", start_index)  # localise GT
     if gt_index == -1:  # if GT not found, exit loop
         break
     else:  # if GT found, look for AG
-        ag_index = seq.find('AG', gt_index + 2)  # find AG after GT
+        ag_index = seq.find('AG', gt_index + 2)  # localise AG
         if ag_index == -1:  # if AG not found, exit loop
             break
         else: 
@@ -22,4 +25,3 @@ while True:
 
 #print the result
 print ('The longest intron has length', max_length)
-    
