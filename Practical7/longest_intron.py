@@ -1,6 +1,3 @@
-#import needed library
-import re
-
 #set the sequence
 seq = 'ATGCAAGTGGTGTGTCTGTTCTGAGAGGGCCTAA'
 
