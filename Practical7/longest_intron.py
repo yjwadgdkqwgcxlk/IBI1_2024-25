@@ -1,5 +1,5 @@
 #set the sequence
-seq = 'ATGCAAGTGGTGTGCTGTTCTGAGAGGCCTAA'
+seq = 'ATGCAAGTGGTGTGTCTGTTCTGAGAGGGCCTAA'
 
 #set the initial values for the variables
 max_length = 0 #the maximum length of the intron
