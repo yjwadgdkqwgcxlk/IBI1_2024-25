@@ -1,32 +1,46 @@
+#import necessary libraries
 import re
 
-#define regular expression for TATA box
-tata_box_regex = re.compile(r"TATA[AT]A[AT]")
+# Compile a regex to find a TATA box in the sequence (example pattern)
+tata_box_regex = re.compile(r'TATA[AT]A[AT]')
+# Compile a regex to extract the ID after 'gene:' in the header
+gene_id_regex = re.compile(r'gene:([^ \t]+)')
 
+# Initialize storage for gene IDs that contain a TATA box
 genes = []
-
+# Track the current gene’s ID and its sequence
 current_gene_name = ""
 current_sequence = ""
 
-# read the file and extract TATA box sequences
-with open('sequence.fa', 'r') as file:     
-    for line in file:
-        if line.startswith('>'):  # start of a new gene
-            # if current gene has TATA box, add it to the list
+# Open the input FASTA file
+with open('sequence.fa', 'r') as infile:
+    for line in infile:
+        line = line.rstrip('\n')
+        if line.startswith('>'):
+            # If we’ve read a gene and its sequence contains a TATA box,
+            # save that gene’s ID before moving on
             if current_gene_name and tata_box_regex.search(current_sequence):
-                genes.append((current_gene_name, current_sequence))
+                genes.append(current_gene_name)
 
-            # store the new gene name and reset sequence
-            current_gene_name = line[1:].strip()  # remove the '>' and any surrounding whitespace
-            current_sequence = ""  # reset the sequence
+            # Extract the gene ID from the header line (after 'gene:')
+            match = gene_id_regex.search(line)
+            if match:
+                current_gene_name = match.group(1)
+            else:
+                # Fallback: take the first whitespace-delimited token (minus the '>')
+                current_gene_name = line[1:].split()[0]
+
+            # Reset the sequence accumulator for the next gene
+            current_sequence = ""
         else:
-            current_sequence += line.strip()  # add sequence without newlines
+            # Append sequence lines (stripping out any whitespace/newlines)
+            current_sequence += line.strip()
 
-# the last gene
+# After the loop, check the very last gene the same way
 if current_gene_name and tata_box_regex.search(current_sequence):
-    genes.append((current_gene_name, current_sequence))
+    genes.append(current_gene_name)
 
-# put it to a file
-with open('tata_genes.fa', 'w') as out_file:
-    for gene_name in genes:
-        out_file.write(f">{gene_name}\n")
+# Write each matching gene ID to the output file, one per line
+with open('tata_genes.fa', 'w') as outfile:
+    for gene in genes:
+        outfile.write(f">{gene}\n")
