@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 The practical is both exciting and chanllenging.
-=======
-This is an example file for reflection in IBI1_2024-25.
 
 During this course, I have learnt version control, how to navigate Unix-like systems and how to write simple programs in Python.
 
 I have also learnt to write careful instructions when communicating online!
->>>>>>> 365acbe9bc28c893609a28fb80889a1229256eaf
+
