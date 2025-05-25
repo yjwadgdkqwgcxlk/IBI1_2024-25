@@ -1,11 +1,10 @@
-# Pseudocode:
-# * Define a function called find_cut_sites that takes:
-#     - A DNA sequence string
-#     - A recognition sequence string (the enzyme target)
-# * Check that both strings contain only A, C, G, or T (uppercase or lowercase allowed)
-# * Scan the DNA sequence and find all start positions where the recognition sequence matches
-# * Return a list of integer positions (0-based indexing)
-# * Demonstrate usage with a sample input and print the result
+# Define a function called find_cut_sites that takes:
+#   A DNA sequence string
+#   A recognition sequence string (the enzyme target)
+# Check that both strings contain only A, C, G, or T (uppercase or lowercase allowed)
+# Scan the DNA sequence and find all start positions where the recognition sequence matches
+# Return a list of integer positions (0-based indexing)
+# Demonstrate usage with a sample input and print the result
 
 def find_cut_sites(dna, recognition):
     # Standardize to uppercase
