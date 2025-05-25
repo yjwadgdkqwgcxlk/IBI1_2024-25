@@ -1,13 +1,28 @@
+# Variables for comparison
 a = 15
 b = 75
-c = a+b
+c = a + b  # 90
 d = 90
 e = 5
-f = d+e
+f = d + e  # 95
+
+# Comparing c and f, f should be greater than c
 if c < f:
- print("开车转步行的通勤模式更快")
-elif c>f:
- print("步行转开车的通勤模式更快")
+    print("Driving is faster than walking")
+elif c > f:
+    print("Walking is faster than driving")
 else:
- print("一样快")
-开车转步行的通勤模式更快
+    print("Both are equally fast")
+
+# Boolean logic part with truth table
+# Truth table for W = X and Y:
+# X    Y    W
+# 0    0    0
+# 0    1    0
+# 1    0    0
+# 1    1    1
+
+X = True
+Y = False
+W = X and Y
+print("W is", W)
