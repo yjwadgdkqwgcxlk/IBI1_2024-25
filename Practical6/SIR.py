@@ -1,37 +1,42 @@
-#import necessary libraries
+# import necessary libraries
 import numpy as np
 import matplotlib.pyplot as plt
-#Define population
+
+# Define initial conditions
 N = 10000
-#Define initial infected population
-I = 1
-#Define initial susceptible population
-S = N - I
-#Define initial recovered population
-R = 0  
-#Define initial infection rate
+S = N - 1  # susceptible
+I = 1      # infected
+R = 0      # recovered
 beta = 0.3
-#Define recovery rate
 gamma = 0.05
 
+# Store history
 S_array = [S]
-I_array = [I]   
+I_array = [I]
 R_array = [R]
 
-# stimulate 1000 time points,create for-loop to iterate 1000 times
-for t in range(1000):
-    # calculate number of infected individuals
-    I = I + beta * S * I / N
-    # calculate number of recovered individuals
-    R = R + gamma * I
-    # calculate number of susceptible individuals  
-    S = S - beta * S * I / N - gamma * I
-    # append values to arrays
+# Simulate over 1000 time steps
+for _ in range(1000):
+    # Calculate new infections and recoveries using binomial sampling
+    new_infections = np.random.binomial(S, beta * I / N)
+    new_recoveries = np.random.binomial(I, gamma)
+
+    # Update compartments
+    S = S - new_infections
+    I = I + new_infections - new_recoveries
+    R = R + new_recoveries
+
+    # Prevent negative values (safety check)
+    S = max(S, 0)
+    I = max(I, 0)
+    R = max(R, 0)
+
+    # Save to arrays
     S_array.append(S)
     I_array.append(I)
     R_array.append(R)
 
-# plot the graph
+# Plot the results
 plt.figure(figsize=(6, 4), dpi=150)
 plt.plot(S_array, label='Susceptible')
 plt.plot(I_array, label='Infected')
@@ -39,5 +44,6 @@ plt.plot(R_array, label='Recovered')
 plt.xlabel('Time')
 plt.ylabel('Population')
 plt.legend()
-plt.title('SIR Model')
+plt.title('Stochastic SIR Model')
+plt.grid()
 plt.show()
