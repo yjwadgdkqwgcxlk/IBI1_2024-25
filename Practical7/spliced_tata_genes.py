@@ -1,12 +1,11 @@
-# Pseudocode:
-# * Ask user to input one of the three splice site combinations (GTAG, GCAG, ATAC)
-# * Read in FASTA file 'sequence.fa', extract gene names and sequences
-# * For each gene:
-#     - Check if sequence contains the chosen splice combination
-#     - If yes, check for TATA box matches using regex TATA[AT]A[AT]
-#     - If TATA matches found, write to output FASTA file:
-#         >GENE_NAME|TATA_count
-#         FULL_SEQUENCE (no line breaks)
+# Ask user to input one of the three splice site combinations (GTAG, GCAG, ATAC)
+# Read in FASTA file 'sequence.fa', extract gene names and sequences
+# For each gene:
+#   Check if sequence contains the chosen splice combination
+#   If yes, check for TATA box matches using regex TATA[AT]A[AT]
+#   If TATA matches found, write to output FASTA file:
+#   >GENE_NAME|TATA_count
+#   FULL_SEQUENCE (no line breaks)
 
 import re
 
