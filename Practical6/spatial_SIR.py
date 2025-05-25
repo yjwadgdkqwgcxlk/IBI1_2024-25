@@ -2,16 +2,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# -------------------------------
-# Pseudocode:
-# * Step 1: Initialize 100x100 population array, all susceptible (0)
-# * Step 2: Randomly infect one individual (set to 1)
-# * Step 3: For each time step:
-#     - Infect susceptible neighbors of infected individuals (probability = beta)
-#     - Infected individuals recover (probability = gamma)
-#     - Save snapshots at selected time points (e.g., t=0,10,50,99)
-# * Step 4: Plot snapshots to show disease spread
-# -------------------------------
+# Initialize 100x100 population array, all susceptible (0)
+# Randomly infect one individual (set to 1)
+# For each time step:
+# Infect susceptible neighbors of infected individuals (probability = beta):
+#    Infected individuals recover (probability = gamma)
+#    Save snapshots at selected time points (e.g., t=0,10,50,99)
+# Plot snapshots to show disease spread
 
 # Initialize population grid (0 = susceptible, 1 = infected, 2 = recovered)
 population = np.zeros((100, 100), dtype=int)
