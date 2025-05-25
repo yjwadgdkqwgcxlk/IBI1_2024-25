@@ -1,14 +1,29 @@
+# Pseudocode:
+# * Define a class called 'Patients' with attributes:
+#     - patient_name
+#     - age
+#     - date_of_latest_admission
+#     - medical_history
+# * Define a method called print_patient_details()
+#     - Print all details on a single line
+# * Demonstrate usage:
+#     - Create an instance of the class
+#     - Call the method to print patient info
+
 class Patients:
-    def __init__(self, patient, age, date, medical):     
-        self.patient_name = patient
+    def __init__(self, name, age, admission_date, medical_history):
+        self.patient_name = name
         self.age = age
-        self.date_of_latest_admission = date
-        self.medical_history = medical
+        self.date_of_latest_admission = admission_date
+        self.medical_history = medical_history
 
-# print the outcome
     def print_patient_details(self):
-        print(f"Patient Name: {self.patient_name}, Age: {self.age}, Date of Latest Admission: {self.date_of_latest_admission}, Medical History: {self.medical_history}")
+        print(f"Patient Name: {self.patient_name}, "
+              f"Age: {self.age}, "
+              f"Date of Latest Admission: {self.date_of_latest_admission}, "
+              f"Medical History: {self.medical_history}")
 
-# example of using the class
-p = Patients("Alex", 18, 4.9, "Aspirin")        
-p.print_patient_details()
+
+# Example usage
+p1 = Patients("Alex Johnson", 18, "2024-05-25", "Allergic to aspirin")
+p1.print_patient_details()
