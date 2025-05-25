@@ -1,0 +1,7 @@
+At first, this practical seemed manageable. I had seen SIR models before, so I thought it would be simple to implement. But once I started coding, I realized that translating the logic into a working simulation—especially a stochastic one—was more involved than expected.
+
+The vaccination part was probably my favorite. Trying out different vaccination rates and seeing how they affected the number of infections helped me visualize the idea of herd immunity in a really clear way. It made the theory feel much more real.
+
+The spatial model was the toughest. Dealing with neighbors, checking boundaries, and making sure recovery happened correctly all took a while to get right. I used parts of the provided snippet but still had to figure out how to structure the rest of the simulation. It wasn’t perfect, but I learned a lot from the process.
+
+Overall, this practical helped me understand how mathematical models connect to real-world problems. I also improved my confidence in writing simulations and using plots to interpret results. It was challenging, but rewarding.
