@@ -2,16 +2,15 @@ from xml.dom import minidom
 import xml.sax
 from datetime import datetime
 
-# Pseudocode:
-# - Parse the go_obo.xml file using both DOM and SAX methods.
-# - For each <term> element:
-#     - Extract the <id>, <name>, <namespace>, and count <is_a> elements.
-#     - Track the term with the highest <is_a> count within each ontology category:
-#       biological_process, molecular_function, cellular_component.
-# - Print the term ID, name, and is_a count for each ontology.
-# - Measure the time taken for both DOM and SAX parsing.
-# - Print the execution time for each method.
-# - Include a comment (in output and code) stating which method was faster.
+# Parse the go_obo.xml file using both DOM and SAX methods.
+# For each <term> element:
+#   Extract the <id>, <name>, <namespace>, and count <is_a> elements.
+#   Track the term with the highest <is_a> count within each ontology category:
+#   biological_process, molecular_function, cellular_component.
+# Print the term ID, name, and is_a count for each ontology.
+# Measure the time taken for both DOM and SAX parsing.
+# Print the execution time for each method.
+# Include a comment (in output and code) stating which method was faster.
 
 file_path = r"D:\vscode\IBI_2024-25\IBI1_2024-25\Practical14\go_obo.xml"
 
