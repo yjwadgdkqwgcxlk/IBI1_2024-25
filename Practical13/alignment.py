@@ -3,14 +3,13 @@
 # Also using a BLOSUM62 substitution matrix from a text file.
 # For each pair, I’ll calculate alignment score and % identity using a non-gapped global alignment.
 
-# Pseudocode:
-# * Read three protein sequences from FASTA files: human, mouse, random
-# * Read BLOSUM62 substitution matrix from text file
-# * For each pairwise comparison:
-#     - Compare aligned amino acids one by one
-#     - Add BLOSUM score and count identical matches
-#     - Calculate total score and percentage identity
-# * Print the comparison name, score, and identity
+# Read three protein sequences from FASTA files: human, mouse, random
+# Read BLOSUM62 substitution matrix from text file
+# For each pairwise comparison:
+#     Compare aligned amino acids one by one
+#     Add BLOSUM score and count identical matches
+#     Calculate total score and percentage identity
+# Print the comparison name, score, and identity
 
 def read_fasta(file):
     with open(file) as f:
