@@ -1,10 +1,9 @@
-# Pseudocode:
-# * Read input FASTA file line by line
-# * For each gene:
-#     - Combine multiline sequences into a single string
-#     - Extract gene name using regex from the header
-#     - Check if sequence contains TATA box pattern TATA[AT]A[AT]
-#     - If match found, write gene name and full sequence to output file 'tata_genes.fa'
+# Read input FASTA file line by line
+# For each gene:
+#   Combine multiline sequences into a single string
+#   Extract gene name using regex from the header
+#   Check if sequence contains TATA box pattern TATA[AT]A[AT]
+#   If match found, write gene name and full sequence to output file 'tata_genes.fa'
 
 import re
 
