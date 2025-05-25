@@ -1,14 +1,13 @@
-# Pseudocode:
-# * Define a class called 'Patients' with attributes:
-#     - patient_name
-#     - age
-#     - date_of_latest_admission
-#     - medical_history
-# * Define a method called print_patient_details()
-#     - Print all details on a single line
-# * Demonstrate usage:
-#     - Create an instance of the class
-#     - Call the method to print patient info
+# Define a class called 'Patients' with attributes:
+#    patient_name
+#    age
+#    date_of_latest_admission
+#    medical_history
+# Define a method called print_patient_details()
+#    Print all details on a single line
+# Demonstrate usage:
+#    Create an instance of the class
+#    Call the method to print patient info
 
 class Patients:
     def __init__(self, name, age, admission_date, medical_history):
