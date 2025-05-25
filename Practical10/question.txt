@@ -1,0 +1,6 @@
+Question: How does the DALYs rate compare between Australia and Andorra over time?
+Code Start Line: 66
+Result Discussion: 
+The plot shows that both countries have experienced a gradual decline in DALYs over time, indicating improved health outcomes. 
+Andorra generally has lower DALYs than Australia, possibly due to factors such as population size, healthcare system scale, or disease exposure differences. 
+Australia's higher average DALYs may reflect a larger population base or greater recorded disease burden, though both countries show positive trends.
